@@ -128,6 +128,8 @@ export default class RefreshScheme extends LocalScheme {
       throw new ExpiredAuthSessionError()
     }
 
+    this.requestHandler.clearHeader()
+
     const endpoint = {
       data: {
         client_id: undefined,
